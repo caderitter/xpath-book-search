@@ -9,7 +9,7 @@ servername=$3
 
 connectionstring=$username@$servername.cnx.org
 echo "Copying SQL file to server..."
-scp search_db_xpath.sql $connectionstring:~/.
+scp search_db_xpath.sql $connectionstring:~/. || exit 1
 echo "...done."
 echo "Creating functions on server..."
 ssh $connectionstring <<EOSSH || exit 1

@@ -55,9 +55,9 @@ Documentation for xpath is available online through many tutorials and specifica
 
 	`./search_db_xpath.sh cade qa "//*[local-name()=\'figure\' and @class=\'unnumbered\']" index.cnxml results.csv`
 
-* Search for all lists not containing `ul` or `ol` elements.
+* Search for all lists in HTML not containing `ul` or `ol` elements.
 	
-	`./search_db_xpath.sh cade qa "//*[local-name()=\'div\' and @data-type=\'list\'][not(ul) and not(ol)]" index.cnxml results.csv`
+	`./search_db_xpath.sh cade qa "//*[local-name()=\'div\' and @data-type=\'list\'][not(ul) and not(ol)]" index.cnxml.html results.csv`
 
 ## Issues
 

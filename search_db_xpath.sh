@@ -18,7 +18,7 @@ echo "SSH to server..."
 ssh $connectionstring <<EOSSH && echo "...connected." || exit 1
 psql -U rhaptos -h /var/run/postgresql -d repository <<EOSQL && echo "Searching..."
 \o $outputfile;
-SELECT search_db_xpath(e'$xpath', '$filename');
+SELECT * FROM search_db_xpath(e'$xpath', '$filename');
 \q
 EOSQL
 echo "...done."

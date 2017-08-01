@@ -15,8 +15,8 @@ outputfile=$5
 connectionstring=$username@$servername.cnx.org
 
 echo "SSH to server..."
-ssh $connectionstring <<EOSSH && echo "...connected." || exit 1
-psql -U rhaptos -h /var/run/postgresql -d repository <<EOSQL && echo "Searching..."
+ssh $connectionstring <<EOSSH || exit 1
+psql -U rhaptos -h /var/run/postgresql -d repository <<EOSQL
 \o $outputfile;
 SELECT * FROM search_db_xpath(e'$xpath', '$filename');
 \q

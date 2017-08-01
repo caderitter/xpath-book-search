@@ -7,6 +7,14 @@ Returns a table of book titles, book uuids, module uuids where the instance was 
 
 ## Setup
 
+Clone the repo to your local machine, cd into the directory, and make the script executable.
+
+`git clone https://github.com/caderitter/xpath-book-search`
+
+`cd xpath-book-search`
+
+`sudo chmod +X xpath_book_search.sh`
+
 This script requires some custom SQL functions to be created in the database. If they haven't been created yet, run the script as follows: 
 
 `./search_db_xpath.sh setup [user] [server]`

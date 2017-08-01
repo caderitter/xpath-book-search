@@ -5,6 +5,14 @@
 Searches for the existence of a given xpath across all modules on a server.
 Returns a table of book titles, book uuids, module uuids where the instance was found, and the authors of that module.
 
+## Setup
+
+This script requires some custom SQL functions to be created in the database. If they haven't been created yet, run the script as follows: 
+
+`./search_db_xpath.sh setup [user] [server]`
+
+Soon, the scripts will be merged into `cnx-db`, so the above will not be necessary.
+
 ## Usage
 
 In a terminal window, enter the following command:
@@ -45,6 +53,6 @@ Documentation for xpath is available online through many tutorials and specifica
 
 ## Issues
 
-* Namespacing is currently not sorted out, so `//*[local-name()=\'\']` must be used to select non-root elements.
+* Namespacing is currently not sorted out, so `//*[local-name()=\'example\']` must be used to select non-root elements.
 
 

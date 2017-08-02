@@ -13,7 +13,7 @@ Clone the repo to your local machine, cd into the directory, and make the script
 
 `cd xpath-book-search`
 
-`sudo chmod +X xpath_book_search.sh`
+`sudo chmod +X search_db_xpath.sh`
 
 This script requires some custom SQL functions to be created in the database. If they haven't been created yet, run the script as follows: 
 

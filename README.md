@@ -31,7 +31,7 @@ The arguments are as follows:
 
 * `[user]` - your username on the server
 
-* `[server]` - the server to SSH to (qa, dev, tea...)
+* `[server]` - the server to SSH to (qa, dev, tea... whichever string comes before `.cnx.org`)
 
 * `["xpath"]` - a double-quote-wrapped valid xpath. All interior quotes must be single quotes and must be escaped with backslashes (as in `"//*[local-name()=\'definition\']"`)
 
@@ -47,13 +47,17 @@ After the search is done, you will be prompted for your server password again to
 
 Documentation for xpath is available online through many tutorials and specifications. 
 
-* Search for all definitions.
+* Search for all definitions in CNXML.
 
 	`./search_db_xpath.sh cade qa "//*[local-name()=\'definition\']" index.cnxml results.csv`
 
-* Search for all unnumbered figures.
+* Search for all unnumbered figures in CNXML.
 
 	`./search_db_xpath.sh cade qa "//*[local-name()=\'figure\' and @class=\'unnumbered\']" index.cnxml results.csv`
+
+* Search for all tags that have a class of 'review-challenge' in CNXML.
+
+	`./search_db_xpath.sh cade qa "//*[@class=\'review-challenge\']]" index.cnxml results.csv`
 
 * Search for all lists in HTML not containing `ul` or `ol` elements.
 	

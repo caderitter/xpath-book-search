@@ -13,7 +13,7 @@ Clone the repo to your local machine, cd into the directory, and make the script
 
 `cd xpath-book-search`
 
-`sudo chmod +X xpath_book_search.sh`
+`sudo chmod +X search_db_xpath.sh`
 
 This script requires some custom SQL functions to be created in the database. If they haven't been created yet, run the script as follows: 
 
@@ -31,7 +31,7 @@ The arguments are as follows:
 
 * `[user]` - your username on the server
 
-* `[server]` - the server to SSH to (qa, dev, tea...)
+* `[server]` - the server to SSH to (qa, dev, tea... whichever string comes before `.cnx.org`)
 
 * `["xpath"]` - a double-quote-wrapped valid xpath. All interior quotes must be single quotes and must be escaped with backslashes (as in `"//*[local-name()=\'definition\']"`)
 
@@ -47,17 +47,21 @@ After the search is done, you will be prompted for your server password again to
 
 Documentation for xpath is available online through many tutorials and specifications. 
 
-* Search for all definitions.
+* Search for all definitions in CNXML.
 
 	`./search_db_xpath.sh cade qa "//*[local-name()=\'definition\']" index.cnxml results.csv`
 
-* Search for all unnumbered figures.
+* Search for all unnumbered figures in CNXML.
 
 	`./search_db_xpath.sh cade qa "//*[local-name()=\'figure\' and @class=\'unnumbered\']" index.cnxml results.csv`
 
-* Search for all lists not containing `ul` or `ol` elements.
+* Search for all tags that have a class of 'review-challenge' in CNXML.
+
+	`./search_db_xpath.sh cade qa "//*[@class=\'review-challenge\']]" index.cnxml results.csv`
+
+* Search for all lists in HTML not containing `ul` or `ol` elements.
 	
-	`./search_db_xpath.sh cade qa "//*[local-name()=\'div\' and @data-type=\'list\'][not(ul) and not(ol)]" index.cnxml results.csv`
+	`./search_db_xpath.sh cade qa "//*[local-name()=\'div\' and @data-type=\'list\'][not(ul) and not(ol)]" index.cnxml.html results.csv`
 
 ## Issues
 

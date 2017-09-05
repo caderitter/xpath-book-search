@@ -63,8 +63,4 @@ Documentation for xpath is available online through many tutorials and specifica
 	
 	`./search_db_xpath.sh cade qa "//*[local-name()=\'div\' and @data-type=\'list\'][not(ul) and not(ol)]" index.cnxml.html results.csv`
 
-## Issues
-
-* Namespacing is currently not sorted out, so `//*[local-name()=\'example\']` must be used to select non-root elements.
-
 
